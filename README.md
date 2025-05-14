@@ -1,6 +1,6 @@
 # Agri-Energy Connect WebApp
 
-## ?? Table of Contents
+##  Table of Contents
 
 - [Description](#description)
 - [System Functionalities](#system-functionalities)
@@ -14,7 +14,7 @@
 ## Description: 
 Agri-Energy Connect is a web app that connects farmers and their products with employees. Employees can create farmer profiles with which farmers cn login into the platform to add their products. Employees are also able to see a list of all the products in the platform.
 
-## ?? System Functionalities:
+##  System Functionalities:
 - Registration and Login of Employee
 - Employee creats Farmer profile
 - Farmer logs in once profile is created
@@ -23,7 +23,7 @@ Agri-Energy Connect is a web app that connects farmers and their products with e
 - Role-based access control using ASP.NET Core Identity
 
 
-## ??? Technologies Used:
+##  Technologies Used:
 - .NET 8 SDK
 - ASP.NET Core MVC
 - ASP.NET Core Identity
@@ -31,7 +31,7 @@ Agri-Energy Connect is a web app that connects farmers and their products with e
 - Visual Studio 2022 or later
 - Razor Views and ViewModel architecture
 
-## ?? Development Environment Setup
+##  Development Environment Setup
 
 ### Prerequisites
 
@@ -68,7 +68,7 @@ Before running the application, ensure the following are installed:
   ```
 
 
-## ?? How to Build and Run the Prototype
+##  How to Build and Run the Prototype
 
 ### Build the Application
 
@@ -81,7 +81,7 @@ Command line:
   ```
 -The app will open in your browser
 
-## ?? User Roles and Access
+##  User Roles and Access
 
 ### Employee
 - Register and log in
@@ -96,7 +96,7 @@ Command line:
   - **Password:** `Farmer@123` (default for all farmer accounts)
 
 
-## ? Testing and Validation
+##  Testing and Validation
 
 - **Form Validation**: Ensures all required fields and valid input ranges are enforced.
 - **Error Handling**: Covers login failures, database errors, and invalid data entries.
@@ -105,7 +105,6 @@ Command line:
 
 
 
-## ?? Notes
+##  Notes
 
 - SQLite is used for simplicity and local storage. You can switch to SQL Server for production.
-- 

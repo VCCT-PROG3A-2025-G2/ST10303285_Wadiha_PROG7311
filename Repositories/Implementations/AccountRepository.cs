@@ -37,19 +37,19 @@ namespace FarmersConnectWebApp.Repositories.Implementations
                 var user = await _userManager.FindByEmailAsync(model.Email);
                 if (user == null)
                 {
-                    Console.WriteLine("❌ User does not exist.");
+                    Console.WriteLine(" User does not exist.");
                 }
                 else
                 {
-                    Console.WriteLine("✅ User exists, but login failed.");
+                    Console.WriteLine("User exists, but login failed.");
                 }
 
                 if (result.IsLockedOut)
-                    Console.WriteLine("⚠️ Account is locked out.");
+                    Console.WriteLine("Account is locked out.");
                 else if (result.IsNotAllowed)
-                    Console.WriteLine("⚠️ Account is not allowed to log in.");
+                    Console.WriteLine("Account is not allowed to log in.");
                 else
-                    Console.WriteLine("⚠️ Invalid credentials.");
+                    Console.WriteLine("Invalid credentials.");
             }
 
             return result;

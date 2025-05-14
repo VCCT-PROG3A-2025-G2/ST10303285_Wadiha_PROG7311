@@ -7,7 +7,8 @@ namespace FarmersConnectWebApp.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly IAccountServices _accountService;
+       
+        private readonly IAccountServices _accountService; 
         private readonly UserManager<IdentityUser> _userManager;
 
         public AccountController(IAccountServices accountService, UserManager<IdentityUser> userManager)

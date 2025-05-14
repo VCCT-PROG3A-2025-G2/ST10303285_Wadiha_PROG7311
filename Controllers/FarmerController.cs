@@ -113,7 +113,7 @@ namespace FarmersConnectWebApp.Controllers
             try
             {
                 var userId = _userManager.GetUserId(User);
-                var farmer = await _productService.GetFarmerByUserId(userId);
+                var farmer = await _productService.GetFarmerByUserId(userId); 
 
                 if (farmer == null)
                 {

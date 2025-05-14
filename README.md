@@ -29,7 +29,7 @@ Agri-Energy Connect is a web app that connects farmers and their products with e
 - ASP.NET Core Identity
 - SQLite (local database)
 - Visual Studio 2022 or later
-- Razor Views and ViewModel architecture
+
 
 ##  Development Environment Setup
 
@@ -44,8 +44,10 @@ Before running the application, ensure the following are installed:
 
 1. **Clone the Repository**
 
- git clone
- cd FarmerConnectWebApp
+  ```
+  Git clone
+  cd FarmerConnectWebApp
+  ```
 
 2. **Open the Solution in Visual Studio**
 - Locate and open `FarmersConnectWebApp.sln`

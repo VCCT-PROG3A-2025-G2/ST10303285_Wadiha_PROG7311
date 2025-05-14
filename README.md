@@ -19,13 +19,13 @@ Agri-Energy Connect is a web app that connects farmers and their products with e
 * ASP.NET Core Identity
 
 ### SetUp:
+
 1. Clone the repository: 
 ```bash
    git clone https://github.com/ST10303285/AgriEnergyConnecttWebApp.git
    cd FarmersConnectWebApp
 
 2. Restore Dependencies:
-
     dotnet restore
 
 ### User Roles and Their Functionalities:

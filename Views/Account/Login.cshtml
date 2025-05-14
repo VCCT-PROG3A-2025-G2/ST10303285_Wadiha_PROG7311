@@ -1,0 +1,57 @@
+﻿@model FarmersConnectWebApp.Models.LoginViewModel
+
+<style>
+    .login-container {
+        max-width: 400px;
+        margin: 100px auto;
+        background-color: #f0f8f5;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2e7d32;
+        }
+
+    .form-control {
+        border-radius: 8px;
+    }
+
+    .btn-primary {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        background-color: #4CAF50;
+        border: none;
+        font-weight: bold;
+    }
+
+    .text-danger {
+        font-size: 0.9rem;
+    }
+</style>
+
+<div class="login-container">
+    <h2>Login to Agri-Energy Connect</h2>
+
+    <form asp-action="Login" method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Email"></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Password"></label>
+            <input asp-for="Password" class="form-control" type="password" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+</div>

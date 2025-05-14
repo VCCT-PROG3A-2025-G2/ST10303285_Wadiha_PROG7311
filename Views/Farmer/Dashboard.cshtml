@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Farmer Dashboard";
+}
+
+<style>
+    body {
+        background: linear-gradient(to bottom right, #e0f7e9, #fffde7);
+        font-family: 'Segoe UI', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .dashboard-container {
+        text-align: center;
+        padding: 50px 20px;
+    }
+
+    .dashboard-title {
+        color: #2e7d32;
+        font-size: 3em;
+        margin-bottom: 20px;
+    }
+
+    .dashboard-message {
+        font-size: 1.2em;
+        color: #555;
+        margin-bottom: 40px;
+    }
+
+    .btn-action {
+        padding: 15px 30px;
+        font-size: 1.1em;
+        border-radius: 10px;
+        margin: 10px;
+        background-color: #2e7d32;
+        color: white;
+        border: none;
+        min-width: 180px;
+        text-decoration: none;
+    }
+
+    .btn-action:hover {
+        background-color: #1b5e20;
+        color: white;
+    } 
+        .btn-action {
+            width: 80%;
+            font-size: 1em;
+        }
+    }
+</style>
+
+<div class="dashboard-container">
+    <h1 class="dashboard-title">Farmer Dashboard</h1>
+    <p class="dashboard-description">Add Your Products.</p>
+
+    <div class="d-flex flex-column align-items-center mt-5">
+    <a class="btn-action" asp-controller="Farmer" asp-action="AddProduct">Add Product</a>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+﻿@model RegisterViewModel
+
+<style>
+    .register-container {
+        max-width: 400px;
+        margin: 100px auto;
+        background-color: #e8f5e9;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+        .register-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2e7d32;
+        }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #388e3c;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+    }
+</style>
+
+<div class="register-container">
+    <h2>Create Your Account</h2>
+
+    <form asp-action="Register">
+        <input asp-for="FullName" placeholder="Full Name" />
+        <input asp-for="Email" placeholder="Email" />
+        <input asp-for="Password" placeholder="Password" type="password" />
+        <input type="hidden" asp-for="Role" />
+        <button type="submit">Register</button>
+    </form>
+</div>
+
+

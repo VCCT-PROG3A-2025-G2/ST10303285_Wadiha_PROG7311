@@ -1,0 +1,121 @@
+﻿@model FarmersConnectWebApp.Models.ProductViewModel
+
+@{
+    ViewData["Title"] = "Add Product";
+}
+
+<style>
+    body {
+        background: linear-gradient(to bottom right, #e0f7e9, #fffde7);
+        font-family: 'Segoe UI', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .form-container {
+        text-align: center;
+        padding: 50px 20px;
+    }
+
+    .form-title {
+        color: #2e7d32;
+        font-size: 3em;
+        margin-bottom: 20px;
+    }
+
+    .form-description {
+        font-size: 1.2em;
+        color: #555;
+        margin-bottom: 30px;
+    }
+
+    .form-box {
+        max-width: 500px;
+        margin: 0 auto;
+        text-align: left;
+    }
+
+    .form-group label {
+        font-weight: bold;
+        color: #2e7d32;
+    }
+
+    .form-control {
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .btn-submit {
+        padding: 15px 30px;
+        font-size: 1.1em;
+        border-radius: 10px;
+        margin-top: 20px;
+        background-color: #2e7d32;
+        color: white;
+        border: none;
+        width: 100%;
+    }
+
+    .btn-submit:hover {
+        background-color: #1b5e20;
+    }
+
+    .alert {
+        max-width: 500px;
+        margin: 0 auto 20px;
+    }
+
+    
+
+        .btn-submit {
+            font-size: 1em;
+        }
+    }
+</style>
+
+<div class="form-container">
+    <h1 class="form-title">Add Product</h1>
+    <p class="form-description">Add a new product to your list using the form below.</p>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+    }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+    }
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-box">
+        <form asp-action="AddProduct" method="post">
+            <div class="form-group mb-3">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Category"></label>
+                <input asp-for="Category" class="form-control" />
+                <span asp-validation-for="Category" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-4">
+                <label asp-for="DateAdded"></label>
+                <input asp-for="DateAdded" class="form-control" type="date" />
+                <span asp-validation-for="DateAdded" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn-submit">Add Product</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

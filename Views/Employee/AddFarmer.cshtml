@@ -1,0 +1,108 @@
+﻿@model FarmersConnectWebApp.Models.CreateFarmerViewModel
+
+@{
+    ViewBag.Title = "Add Farmer";
+}
+
+<style>
+    body {
+        background: linear-gradient(to bottom right, #e0f7e9, #fffde7);
+        font-family: 'Segoe UI', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .add-farmer-container {
+        text-align: center;
+        padding: 50px 20px;
+    }
+
+    .add-farmer-title {
+        color: #2e7d32;
+        font-size: 3em;
+        margin-bottom: 20px;
+    }
+
+    .add-farmer-description {
+        font-size: 1.2em;
+        color: #555;
+        margin-bottom: 30px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-control {
+        border-radius: 10px;
+        padding: 15px;
+        font-size: 1.1em;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .btn-submit {
+        padding: 15px 30px;
+        font-size: 1.2em;
+        border-radius: 10px;
+        background-color: #2e7d32;
+        color: white;
+        margin-top: 20px;
+        min-width: 150px;
+    }
+
+    .alert {
+        margin-top: 20px;
+        border-radius: 10px;
+    }
+
+        .form-control {
+            font-size: 1em;
+            padding: 12px;
+        }
+
+        .btn-submit {
+            width: 80%;
+            font-size: 1em;
+        }
+    }
+</style>
+
+<div class="add-farmer-container">
+    <h1 class="add-farmer-title">Add Farmer</h1>
+    <p class="add-farmer-description">Please enter the farmer's details below to add their profiles to the system.</p>
+
+    <!-- Success and Error Messages -->
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+    }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+    }
+
+    <!-- Form -->
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <form asp-action="AddFarmer" method="post">
+        <div class="form-group">
+            <label asp-for="FullName" class="form-label">Full Name</label>
+            <input asp-for="FullName" class="form-control" />
+            <span asp-validation-for="FullName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Email" class="form-label">Email</label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn-submit">Add Farmer</button>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

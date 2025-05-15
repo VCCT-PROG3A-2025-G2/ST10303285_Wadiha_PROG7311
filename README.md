@@ -45,7 +45,7 @@ Before running the application, ensure the following are installed:
 1. **Clone the Repository**
 
   ```
-  Git clone https://github.com/ST10303285/AgriEnergyConnecttWebApp.git
+  Git clone https://github.com/ST10303285/ST10303285_Wadiha_PROG7311.git
   cd FarmerConnectWebApp
   ```
 

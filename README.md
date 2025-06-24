@@ -45,7 +45,7 @@ Before running the application, ensure the following are installed:
 1. **Clone the Repository**
 
   ```
-  Git clone https://github.com/ST10303285/ST10303285_Wadiha_PROG7311.git
+  Git clone https://github.com/VCCT-PROG3A-2025-G2/ST10303285_Wadiha_PROG7311.git 
   cd FarmerConnectWebApp
   ```
 
@@ -89,12 +89,14 @@ Command line:
 - Register and log in
 - Create and manage farmer profiles
 - View all product listings submitted by farmers
+ - **Email:** `employee@example.com`
+ - **Password:** `Employee123!` 
 
 ### Farmer
 - Can only log in if created by an employee
 - Add,their own product listings
 - - **Login credentials:**
-  - **Email:** Provided by the employee during profile creation
+  - **Email:** Provided by the employee during profile creation `Farmer@farm.com`
   - **Password:** `Farmer@123` (default for all farmer accounts)
 
 

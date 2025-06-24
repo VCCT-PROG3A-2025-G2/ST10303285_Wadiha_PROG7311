@@ -49,55 +49,27 @@ namespace FarmersConnectWebApp.Controllers
 
             try
             {
-                var userId = _userManager.GetUserId(User);
-                var employee = _employeeService.GetByUserId(userId);
+                var result = await _employeeService.CreateFarmerWithLoginAsync(model, _userManager.GetUserId(User));
 
-                if (employee == null)
+                if (!result.Success)
                 {
-                    TempData["ErrorMessage"] = "Logged-in employee not found.";
-                    return RedirectToAction("AddFarmer");
-                }
-
-                // 1. Create IdentityUser
-                var identityUser = new IdentityUser
-                {
-                    UserName = model.Email,
-                    Email = model.Email
-                };
-
-                var createResult = await _userManager.CreateAsync(identityUser, "Farmer@123"); // TODO: Generate or allow secure password
-
-                if (!createResult.Succeeded)
-                {
-                    TempData["ErrorMessage"] = "Failed to create user account.";
+                    TempData["ErrorMessage"] = result.ErrorMessage;
                     return View(model);
                 }
 
-                // 2. Assign Farmer role
-                await _userManager.AddToRoleAsync(identityUser, "Farmer");
-
-                // 3. Create Farmer entity and save
-                var farmer = new Farmer
-                {
-                    FullName = model.FullName,
-                    Email = model.Email,
-                    UserId = identityUser.Id,
-                    EmployeeId = employee.Id
-                };
-
-                _employeeService.AddFarmer(farmer);
-
-                TempData["SuccessMessage"] = "Farmer profile and login created successfully.";
+                TempData["SuccessMessage"] = "";
                 return RedirectToAction("Dashboard");
+
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                TempData["ErrorMessage"] = "An error occurred while creating the Farmer profile.";
+                TempData["ErrorMessage"] = $"An error occurred while creating the farmer profile: {ex.Message}";
                 return View(model);
             }
+
         }
 
-     
+
 
         // View Products from Farmers
         [HttpGet]

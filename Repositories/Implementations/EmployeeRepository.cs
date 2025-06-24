@@ -17,10 +17,10 @@ namespace FarmersConnectWebApp.Repositories.Implementations
             _context = context;
         }
 
-        public void AddFarmer(Farmer farmer)
+        public async Task AddFarmerAsync(Farmer farmer)
         {
             _context.Farmers.Add(farmer);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
         public IEnumerable<Product> GetProducts(int farmerId, DateTime startDate, DateTime endDate, string category)
